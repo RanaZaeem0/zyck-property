@@ -24,7 +24,7 @@ export default function Search() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/api/properties/list")
+        const response = await fetch("/api/properties/list?statusProperty=ACCEPTED")
         if (!response.ok) {
           throw new Error(`Error fetching properties`)
         }

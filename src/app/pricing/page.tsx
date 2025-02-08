@@ -66,7 +66,7 @@ const Page = () => {
                   </div>
                 </div>
 
-                <Link href="/talktosales" className="mt-8">
+                <Link href="/contact" className="mt-8">
                   <button className="w-full bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-3 transition-colors duration-200 flex items-center justify-center group">
                     Get Started
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -110,7 +110,7 @@ const Page = () => {
                   </div>
                 </div>
 
-                <Link href="/talktosales" className="mt-8">
+                <Link href="/contact" className="mt-8">
                   <button className="w-full bg-green-500 hover:bg-green-600 text-white rounded-lg px-4 py-3 transition-colors duration-200 flex items-center justify-center group">
                     Get Started
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,7 +154,7 @@ const Page = () => {
                   </div>
                 </div>
 
-                <Link href="/talktosales" className="mt-8">
+                <Link href="/contact" className="mt-8">
                   <button className="w-full bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-3 transition-colors duration-200 flex items-center justify-center group">
                     Get Started
                     <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">

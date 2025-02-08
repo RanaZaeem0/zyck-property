@@ -37,7 +37,7 @@ model Property {
   typeId      Int
   statusId    Int
   DetailId    Int
-  StatusProperty      StatusProperty     @default(ACCEPTED) // Use enum here
+  StatusProperty      StatusProperty     @default(ACCEPTED) 
   createdAt   DateTime           @default(now())
   contact     Contact?
   typeDetail  PropertyTypeDetail @relation(fields: [DetailId], references: [id])

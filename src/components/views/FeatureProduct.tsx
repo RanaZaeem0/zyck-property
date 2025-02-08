@@ -2,10 +2,7 @@
 "use client";
 import { Property } from '@/lib/type';
 import PropertyCardsecond from '@/components/views/secondPropertyCard';
-import Loader from '../ui/loader';
 import { SkeletonPropertyCard } from '../custom/skeleton/SkeletonPropertyCard';
-import { getAllPorpertyList } from '@/lib/actions/property/AllListProperty';
-import { AreaType } from '@prisma/client';
 import { useEffect, useState } from 'react';
 import { getLocalStorageWithTTL, setLocalStorageWithTTL } from '@/lib/localStorage';
 import { propertiesDataLocalStorage } from '@/lib/constant';
@@ -28,13 +25,13 @@ const [properties, setProperties] = useState<Property[]>([]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/properties/list");
+      const response = await fetch("/api/properties/list?statusProperty=ACCEPTED");
       if (!response.ok) {
         throw new Error(`Error Status ${response.statusText}`);
       }
       const result = await response.json();
       setProperties(result);
-      setLocalStorageWithTTL(propertiesDataLocalStorage, result, 1000 * 60 * 3); // Store for 3 minutes
+      setLocalStorageWithTTL(propertiesDataLocalStorage, result, 1000 * 60 * 1); // Store for 3 minutes
     } catch (error) {
       console.error("Error fetching properties:", error);
     } finally {

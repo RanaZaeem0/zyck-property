@@ -25,14 +25,14 @@ const PropertySalePage = () => {
         const cachedData = getLocalStorageWithTTL(propertiesDataLocalStorage);
         if (cachedData) {
           console.log("Using cached data",cachedData);
-          setData(cachedData.filter((property: Property) => Number(property.status.id) === 1));
+          setData(cachedData.filter((property: Property) => Number(property.status.id) === 2));
           console.log(data,"after chage");
           
           return;
         }
         console.log("Not using",cachedData);
         setLoading(true);
-        const response = await fetch(`/api/properties/list?statusId=2`);
+        const response = await fetch(`/api/properties/list?statusId=2statusProperty=ACCEPTED`);
         if (!response.ok) {
           throw new Error(`Error Response ${response.statusText}`);
         }

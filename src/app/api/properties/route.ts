@@ -20,6 +20,7 @@ export async function GET() {
         type: true,
         status: true,
         price: true,
+        StatusProperty: true,
         feature :{
             select: {
                 bathrooms: true,

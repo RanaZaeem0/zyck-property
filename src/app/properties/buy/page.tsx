@@ -84,7 +84,7 @@ interface Location {
         }
         console.log("Not using",cachedData);
 
-        const response = await fetch('/api/properties/list?statusId=1')
+        const response = await fetch('/api/properties/list?statusId=1statusProperty=ACCEPTED')
         if (!response.ok) {
           throw new Error(`Error Status ${response.statusText}`)
         }

@@ -65,13 +65,6 @@ export async function DELETE(
   req: Request,
   { params }: { params: Promise<{ id: string }> }
 ) {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
-
-  if (!user || !user.id) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
   const id = (await params).id;
 
   try {
@@ -83,10 +76,6 @@ export async function DELETE(
 
     if (!property) {
       return NextResponse.json({ error: "Property not found" }, { status: 404 });
-    }
-
-    if (property.userId !== user.id) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
     }
 
     await prisma.property.delete({
